@@ -1,4 +1,4 @@
-group: jblimp_kana
+group: jblimp_both
 dataset_path: json
 output_type: multiple_choice
 validation_split: train
