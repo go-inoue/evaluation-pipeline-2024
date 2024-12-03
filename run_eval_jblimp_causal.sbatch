@@ -14,9 +14,9 @@ arg1=$1 # model name
 arg2=$2 # dataset size
 arg3=$3 # seed
 
-echo "# MODEL: $arg1"
-echo "# DATASET_SIZE: $arg2"
-echo "# SEED: $arg3"
+# echo "# MODEL: $arg1"
+# echo "# DATASET_SIZE: $arg2"
+# echo "# SEED: $arg3"
 
 SEED=$3
 SIZE=$2
