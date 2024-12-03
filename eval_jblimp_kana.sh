@@ -1,0 +1,15 @@
+#!/bin/bash
+
+MODEL_PATH=$1
+MODEL_BASENAME=$MODEL_BASE-$CHECK_POINT
+
+python -m lm_eval --model hf \
+    --model_args pretrained=$MODEL_PATH,backend="causal" \
+    --tasks jblimp_kana \
+    --device cuda:0 \
+    --batch_size 1 \
+    --log_samples \
+    --output_path results/jblimp_kana/${MODEL_BASENAME}/jblimp_results.json
+
+# Use `--model hf-mlm` and `--model_args pretrained=$MODEL_PATH,backend="mlm"` if using a custom masked LM.
+# Add `--trust_remote_code` if you need to load custom config/model files.
