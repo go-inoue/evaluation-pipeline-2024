@@ -45,7 +45,7 @@ for PREPROCESS in "R" "S" "K" "B"; do
     CURRICULUM=$PREPROCESS$PREPROCESS$PREPROCESS$PREPROCESS
     MODEL=$MODEL_DIR/model--$MODEL_CONFIG_BASE.tokenizer--$TOKENIZER_BASE.size--10m.data--$DATA_NAME.curriculum--$CURRICULUM.s$SEED
     for i in $(seq 0 39); do
-    /scratch/gi372/evaluation-pipeline-2024/eval_jblimp.sh $MODEL/epoch_$i
+    /scratch/gi372/evaluation-pipeline-2024/eval_jblimp.sh $MODEL $i
     done
 done
 
@@ -54,7 +54,7 @@ for PREPROCESS in "S" "K" "B"; do
     CURRICULUM=RANDOM_$PREPROCESS
     MODEL=$MODEL_DIR/model--$MODEL_CONFIG_BASE.tokenizer--$TOKENIZER_BASE.size--10m.data--$DATA_NAME.curriculum--$CURRICULUM.s$SEED
     for i in $(seq 0 39); do
-    /scratch/gi372/evaluation-pipeline-2024/eval_jblimp.sh $MODEL/epoch_$i
+    /scratch/gi372/evaluation-pipeline-2024/eval_jblimp.sh $MODEL $i
     done
 done
 
@@ -63,7 +63,7 @@ for PREPROCESS in "S" "K" "B"; do
     CURRICULUM="$PREPROCESS"RRR
     MODEL=$MODEL_DIR/model--$MODEL_CONFIG_BASE.tokenizer--$TOKENIZER_BASE.size--10m.data--$DATA_NAME.curriculum--$CURRICULUM.s$SEED
     for i in $(seq 10 39); do
-    /scratch/gi372/evaluation-pipeline-2024/eval_jblimp.sh $MODEL/epoch_$i
+    /scratch/gi372/evaluation-pipeline-2024/eval_jblimp.sh $MODEL $i
     done
 done
 
@@ -72,7 +72,7 @@ for PREPROCESS in "S" "K" "B"; do
     CURRICULUM=R"$PREPROCESS"RR
     MODEL=$MODEL_DIR/model--$MODEL_CONFIG_BASE.tokenizer--$TOKENIZER_BASE.size--10m.data--$DATA_NAME.curriculum--$CURRICULUM.s$SEED
     for i in $(seq 10 39); do
-    /scratch/gi372/evaluation-pipeline-2024/eval_jblimp.sh $MODEL/epoch_$i
+    /scratch/gi372/evaluation-pipeline-2024/eval_jblimp.sh $MODEL $i
     done
 done
 
@@ -81,7 +81,7 @@ for PREPROCESS in "S" "K" "B"; do
     CURRICULUM=RR"$PREPROCESS"R
     MODEL=$MODEL_DIR/model--$MODEL_CONFIG_BASE.tokenizer--$TOKENIZER_BASE.size--10m.data--$DATA_NAME.curriculum--$CURRICULUM.s$SEED
     for i in $(seq 20 39); do
-    /scratch/gi372/evaluation-pipeline-2024/eval_jblimp.sh $MODEL/epoch_$i
+    /scratch/gi372/evaluation-pipeline-2024/eval_jblimp.sh $MODEL $i
     done
 done
 
@@ -90,7 +90,7 @@ for PREPROCESS in "S" "K" "B"; do
     CURRICULUM=RRR"$PREPROCESS"
     MODEL=$MODEL_DIR/model--$MODEL_CONFIG_BASE.tokenizer--$TOKENIZER_BASE.size--10m.data--$DATA_NAME.curriculum--$CURRICULUM.s$SEED
     for i in $(seq 30 39); do
-    /scratch/gi372/evaluation-pipeline-2024/eval_jblimp.sh $MODEL/epoch_$i
+    /scratch/gi372/evaluation-pipeline-2024/eval_jblimp.sh $MODEL $i
     done
 done
 #/scratch/gi372/evaluation-pipeline-2024/eval_jblimp.sh $MODEL
