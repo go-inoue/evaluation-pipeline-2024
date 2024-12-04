@@ -3,7 +3,7 @@
 MODEL_PATH=$1
 CHECK_POINT=$2
 MODEL_BASE=$(basename "$MODEL_PATH")
-MODEL_BASENAME=$MODEL_BASE-$CHECK_POINT
+MODEL_BASENAME=$MODEL_BASE.epoch--$CHECK_POINT
 
 python -m lm_eval --model hf \
     --model_args pretrained=$MODEL_PATH,backend="causal" \
